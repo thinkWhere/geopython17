@@ -1,0 +1,6 @@
+#Pycharm
+.idea/
+
+#python
+venv/
+*pyc
