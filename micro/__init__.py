@@ -2,6 +2,7 @@ import logging
 import os
 from flask import Flask
 from logging.handlers import RotatingFileHandler
+from flask_restful import Api
 
 
 def create_app():
@@ -13,6 +14,8 @@ def create_app():
 
     initialise_logger(app)
     app.logger.info('Geopython 17 Microservice starting up :)')
+
+    init_flask_restful_routes(app)
 
     return app
 
@@ -32,3 +35,16 @@ def initialise_logger(app):
 
     app.logger.addHandler(file_handler)
     app.logger.setLevel(log_level)
+
+
+def init_flask_restful_routes(app):
+    """
+    Define the routes the API exposes using Flask-Restful.  See docs here
+    http://flask-restful-cn.readthedocs.org/en/0.3.5/quickstart.html#endpoints
+    """
+    app.logger.info('Initialising API Routes')
+    api = Api(app)
+
+    from micro.api.hello_api import HelloAPI
+
+    api.add_resource(HelloAPI, '/api/v1/hello')

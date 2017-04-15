@@ -6,8 +6,8 @@ manager = Manager(app)
 
 
 @app.route("/")
-def hello():
-    return "Hello World! v3"
+def welcome():
+    return "Geopython 2017 Microservice"
 
 
 if __name__ == '__main__':
