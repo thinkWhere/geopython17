@@ -45,6 +45,7 @@ def init_flask_restful_routes(app):
     app.logger.info('Initialising API Routes')
     api = Api(app)
 
-    from micro.api.hello_api import HelloAPI
+    from micro.api.hello_api import HelloAPI, CalcAPI
 
     api.add_resource(HelloAPI, '/api/v1/hello')
+    api.add_resource(CalcAPI,  '/api/v1/calc/<int:num1>/multiplied-by/<int:num2>')
