@@ -4,3 +4,6 @@
 #python
 venv/
 *pyc
+
+# Ignore local logs
+logs/
