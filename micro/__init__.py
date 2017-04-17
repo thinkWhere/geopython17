@@ -12,6 +12,12 @@ def create_app():
     env = os.getenv('MICRO_ENV', 'Dev')  # default to Dev if config environment var not set
     app.config.from_object(f'micro.config.{env}Config')
 
+    app.logger.debug('Initialising Blueprints')
+    from .web import main as main_blueprint
+    from .web import swagger as swagger_blueprint
+    app.register_blueprint(main_blueprint)
+    app.register_blueprint(swagger_blueprint)
+
     initialise_logger(app)
     app.logger.info('Geopython 17 Microservice starting up :)')
 
@@ -46,6 +52,8 @@ def init_flask_restful_routes(app):
     api = Api(app)
 
     from micro.api.hello_api import HelloAPI, CalcAPI
+    from micro.api.swagger_docs_api import SwaggerDocsAPI
 
-    api.add_resource(HelloAPI, '/api/v1/hello')
-    api.add_resource(CalcAPI,  '/api/v1/calc/<int:num1>/multiplied-by/<int:num2>')
+    api.add_resource(HelloAPI,       '/api/v1/hello')
+    api.add_resource(CalcAPI,        '/api/v1/calc/<int:num1>/multiplied-by/<int:num2>')
+    api.add_resource(SwaggerDocsAPI, '/api/docs')

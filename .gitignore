@@ -7,3 +7,6 @@ venv/
 
 # Ignore local logs
 logs/
+
+# Mac
+.DS_Store
