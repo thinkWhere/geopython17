@@ -13,6 +13,6 @@ class ProdConfig(EnvironmentConfig):
 
 class DevConfig(EnvironmentConfig):
     """ Production Environment Config """
-    LOG_LEVEL = logging.DEBUG
     API_DOCS_URL = 'http://localhost:5000/api-docs/swagger-ui-v2/index.html?url=http://localhost:5000/api/docs'
-
+    LOG_LEVEL = logging.DEBUG
+    SQLALCHEMY_DATABASE_URI = 'postgresql://geopython:geopython@localhost/geopython-db'
