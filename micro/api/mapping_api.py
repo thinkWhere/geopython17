@@ -51,7 +51,7 @@ class MappingAPI(Resource):
               type: string
         responses:
             200:
-                description: Answer provided
+                description: GeoJson Feature Collection
             500:
                 description: Internal Server Error
         """
