@@ -1,16 +1,17 @@
 """empty message
 
-Revision ID: 60bac3664161
+Revision ID: fe71661b0cd7
 Revises: 
-Create Date: 2017-04-19 10:37:36.557010
+Create Date: 2017-04-19 11:37:59.869825
 
 """
 from alembic import op
 import sqlalchemy as sa
 import geoalchemy2
 
+
 # revision identifiers, used by Alembic.
-revision = '60bac3664161'
+revision = 'fe71661b0cd7'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,7 +22,7 @@ def upgrade():
     op.create_table('mapping',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(), nullable=False),
-    sa.Column('geometry', geoalchemy2.types.Geometry(geometry_type='GEOMETRYCOLLECTION', srid=4326), nullable=True),
+    sa.Column('geometry', geoalchemy2.types.Geometry(geometry_type='LINESTRING', srid=4326), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

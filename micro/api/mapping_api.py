@@ -32,4 +32,5 @@ class MappingAPI(Resource):
                 description: Internal Server Error
         """
         mapping_json = request.get_json()
-        MappingService.save_mapping_feature(mapping_json)
+        MappingService.save_feature_collection(mapping_json)
+        return {"Feature": "Saved"}, 201
