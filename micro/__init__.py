@@ -1,8 +1,14 @@
 import logging
 import os
 from flask import Flask
-from logging.handlers import RotatingFileHandler
 from flask_restful import Api
+from flask_sqlalchemy import SQLAlchemy
+from logging.handlers import RotatingFileHandler
+
+db = SQLAlchemy()
+
+# Import all models so that they are registered with SQLAlchemy
+from micro.models.postgis import *  # noqa
 
 
 def create_app():
@@ -11,6 +17,8 @@ def create_app():
 
     env = os.getenv('MICRO_ENV', 'Dev')  # default to Dev if config environment var not set
     app.config.from_object(f'micro.config.{env}Config')
+
+    db.init_app(app)
 
     app.logger.debug('Initialising Blueprints')
     from .web import main as main_blueprint
