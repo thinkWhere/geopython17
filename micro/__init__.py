@@ -10,7 +10,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 # Import all models so that they are registered with SQLAlchemy
-from micro.models.postgis import *  # noqa
+from micro.models.postgis import mapping  # noqa
 
 
 def create_app():
