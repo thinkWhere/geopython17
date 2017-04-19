@@ -67,6 +67,7 @@ def init_flask_restful_routes(app):
     from micro.api.swagger_docs_api import SwaggerDocsAPI
 
     api.add_resource(HelloAPI,       '/api/v1/hello')
-    api.add_resource(MappingAPI,     '/api/v1/mapping')
+    api.add_resource(MappingAPI,     '/api/v1/mapping', methods=['PUT'])
+    api.add_resource(MappingAPI,     '/api/v1/mapping/<string:name>', endpoint="get mapping", methods=['GET'])
     api.add_resource(CalcAPI,        '/api/v1/calc/<int:num1>/multiplied-by/<int:num2>')
     api.add_resource(SwaggerDocsAPI, '/api/docs')

@@ -17,3 +17,8 @@ class MappingService:
         for feature in mapping_geometry['features']:
             mapping = Mapping(mapping_json['name'], feature)
             mapping.save()
+
+    @staticmethod
+    def get_mapping(name: str):
+        """ Get feature collection from db for name """
+        return Mapping.get_features_by_name(name)

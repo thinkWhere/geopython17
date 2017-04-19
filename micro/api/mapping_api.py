@@ -34,3 +34,25 @@ class MappingAPI(Resource):
         mapping_json = request.get_json()
         MappingService.save_feature_collection(mapping_json)
         return {"Feature": "Saved"}, 201
+
+    def get(self, name):
+        """
+        Simple calculator that multiplies 2 numbers
+        ---
+        tags:
+          - mapping
+        produces:
+          - application/json
+        parameters:
+            - name: name
+              in: path
+              description: Feature Collection to find
+              required: true
+              type: string
+        responses:
+            200:
+                description: Answer provided
+            500:
+                description: Internal Server Error
+        """
+        return MappingService.get_mapping(name)
