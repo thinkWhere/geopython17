@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Hello Basel</title>
+	<style>
+		#mapid
+		{
+			height: 800px;
+			width: 100%
+		}
+	</style>
+	<link rel="stylesheet" href="{{ url_for('main.static', filename='leaflet/leaflet.css') }}" />
+	<script src="{{ url_for('main.static', filename='leaflet/leaflet.js') }}"></script>
+	<script src="{{ url_for('main.static', filename='map.js') }}"></script>
+	<script>
+		var file1 = "HelloBasel.geojson";
+		var file2 = "test.geojson";
+		var current = file1;
+		function onNewLocation()
+		{
+		    current = ((current == file1) ? file2 : file1);
+		    readTextFile(current, geojson_callback);
+		}
+	</script>
+</head>
+<body>
+	<div id="mapid"></div>
+	<br />
+	<input type="text" id="location" value="hello basel" />
+	<button onclick="onNewLocation()">Go</button>
+	<script>
+		map_setup("mapid");
+	</script>
+</body>
+</html>
