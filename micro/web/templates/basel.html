@@ -15,9 +15,12 @@
 	<script>
 		function onNewLocation(word)
 		{
-		    var http_put = encodeURI("/api/v1/mapping/word/"+word);
+            function zoomMap(data){
+                map.setView(new L.LatLng(data.location.y, data.location.x), 14);
+            }
 
-		    $.ajax({url:http_put, type:'PUT'});
+		    var http_put = encodeURI("/api/v1/mapping/word/"+word);
+		    $.ajax({url:http_put, type:'PUT', success: zoomMap});
 
             var http_get = encodeURI("/api/v1/mapping/"+word);
 

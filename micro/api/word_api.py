@@ -25,5 +25,5 @@ class WordAPI(Resource):
             500:
                 description: Internal Server Error
         """
-        WordGenerationService.generate_letters(word)
-        return {"Feature": "Saved"}, 201
+        location = WordGenerationService.generate_letters(word)
+        return {"Feature": "Saved", "location": location}, 201
