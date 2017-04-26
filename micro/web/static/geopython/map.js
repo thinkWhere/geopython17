@@ -47,5 +47,5 @@ function map_setup(id) {
     map.addLayer(osm);
 
     // load the initial geojson
-    readTextFile("http://localhost:5000/api/v1/mapping/ac", geojson_callback);
+    //readTextFile("http://localhost:5000/api/v1/mapping/ac", geojson_callback);
 }
