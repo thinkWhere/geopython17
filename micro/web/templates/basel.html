@@ -8,25 +8,32 @@
 			width: 100%
 		}
 	</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="{{ url_for('main.static', filename='leaflet/leaflet.css') }}" />
 	<script src="{{ url_for('main.static', filename='leaflet/leaflet.js') }}"></script>
 	<script src="{{ url_for('main.static', filename='map.js') }}"></script>
 	<script>
-		var file1 = "HelloBasel.geojson";
-		var file2 = "test.geojson";
-		var current = file1;
-		function onNewLocation()
+		//var file1 = "HelloBasel.geojson";
+		//var file2 = "test.geojson";
+		//var current = file1;
+		function onNewLocation(word)
 		{
-		    current = ((current == file1) ? file2 : file1);
-		    readTextFile(current, geojson_callback);
+		    var http_put = encodeURI("/api/v1/mapping/word/"+word);
+
+		    $.ajax({url:http_put, type:'PUT'});
+
+            var http_get = encodeURI("/api/v1/mapping/"+word);
+
+
+		   readTextFile(http_get, geojson_callback);
 		}
 	</script>
 </head>
 <body>
 	<div id="mapid"></div>
 	<br />
-	<input type="text" id="location" value="hello basel" />
-	<button onclick="onNewLocation()">Go</button>
+	<input type="text" id="word" value="hello basel" />
+	<button onclick="onNewLocation(document.getElementById('word').value)">Go</button>
 	<script>
 		map_setup("mapid");
 	</script>
