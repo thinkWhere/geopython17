@@ -54,6 +54,16 @@ Finally we can run the application, as follows:
 python manage.py runserver -d
 ```
 
+### Versions
+
+You can see how we got to the version 1.0 of our microservice by checking out the tagged releases as follows:
+
+``` git checkout -b version1 v0.1```
+
+It may help to run git clean to tidy up any empty dirs for clarity as you work thru the versions, eg:
+
+``` git clean -fd ```
+
 ### Useful Links
 
 * [Flask](http://flask.pocoo.org/)
