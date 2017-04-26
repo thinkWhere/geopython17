@@ -13,9 +13,6 @@
 	<script src="{{ url_for('main.static', filename='leaflet/leaflet.js') }}"></script>
 	<script src="{{ url_for('main.static', filename='map.js') }}"></script>
 	<script>
-		//var file1 = "HelloBasel.geojson";
-		//var file2 = "test.geojson";
-		//var current = file1;
 		function onNewLocation(word)
 		{
 		    var http_put = encodeURI("/api/v1/mapping/word/"+word);

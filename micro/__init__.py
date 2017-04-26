@@ -1,7 +1,6 @@
 import logging
 import os
 from flask import Flask
-from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
@@ -35,7 +34,6 @@ def create_app():
 
     init_flask_restful_routes(app)
 
-    CORS(app)  # Enables CORS on all API routes, meaning API is callable from anywhere
     return app
 
 
