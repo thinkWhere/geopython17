@@ -35,7 +35,6 @@ def create_app():
 
     init_flask_restful_routes(app)
 
-    CORS(app)  # Enables CORS on all API routes, meaning API is callable from anywhere
     return app
 
 
