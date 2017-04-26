@@ -82,7 +82,9 @@ class WordGenerationService:
         spacing = 0.001
         geojson = WordGenerationService.generate_word(word, start_x, start_y, spacing)
         to_save = {"name": word, "geometry": geojson}
-        return MappingService().save_feature_collection(to_save)
+        MappingService().save_feature_collection(to_save)
+        location = {"x": start_x, "y": start_y}
+        return location
 
     @staticmethod
     def random_position_around_basel():
