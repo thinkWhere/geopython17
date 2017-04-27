@@ -1,5 +1,5 @@
 # GeoPython 2017
-##Intro
+## Intro
 This repo contains the accompanying code from the **Build your own Geospatial Microservice using Python/Flask/PostGIS** workshop thinkWhere gave at GeoPython 2017
 
 ## Dependencies
@@ -56,7 +56,7 @@ python manage.py runserver -d
 
 ### Versions
 
-You can see how we got to the version 1.0 of our microservice by checking out the tagged releases as follows:
+You can see how we got to the version from Flask hello world to v1.0 of our microservice by checking out the tagged releases as follows:
 
 ``` git checkout -b version1 v0.1```
 
@@ -67,3 +67,4 @@ It may help to run git clean to tidy up any empty dirs for clarity as you work t
 ### Useful Links
 
 * [Flask](http://flask.pocoo.org/)
+* [Flask-Script](https://flask-script.readthedocs.io/en/latest/)
