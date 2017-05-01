@@ -77,9 +77,9 @@ It may help to run git clean to tidy up any empty dirs for clarity as you work t
 * [Flask-Restful](https://flask-restful.readthedocs.io/en/0.3.5/)
 * [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 * [Geoalchemy](https://geoalchemy-2.readthedocs.io/en/latest/)
+* [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
 * [geojson](https://github.com/frewsxcv/python-geojson)
 
 ### Ideas in practice
 * [HOT Tasking Manager v3](https://github.com/hotosm/tasking-manager) - Built by thinkWhere using these ideas
 
-* [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
