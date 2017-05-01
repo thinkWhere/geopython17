@@ -68,3 +68,4 @@ It may help to run git clean to tidy up any empty dirs for clarity as you work t
 
 * [Flask](http://flask.pocoo.org/)
 * [Flask-Script](https://flask-script.readthedocs.io/en/latest/)
+* [Flask-Restful](https://flask-restful.readthedocs.io/en/0.3.5/)
