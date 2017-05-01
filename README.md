@@ -75,6 +75,7 @@ It may help to run git clean to tidy up any empty dirs for clarity as you work t
 * [Flask](http://flask.pocoo.org/)
 * [Flask-Script](https://flask-script.readthedocs.io/en/latest/)
 * [Flask-Restful](https://flask-restful.readthedocs.io/en/0.3.5/)
+* [Flask-Swagger](https://github.com/gangverk/flask-swagger)
 * [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 * [Geoalchemy](https://geoalchemy-2.readthedocs.io/en/latest/)
 * [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
