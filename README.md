@@ -65,7 +65,21 @@ It may help to run git clean to tidy up any empty dirs for clarity as you work t
 ``` git clean -fd ```
 
 ### Useful Links
+#### HTTP and Rest
+* [HTTP and REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
+* [HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+* [HTTP Status Dogs](https://httpstatusdogs.com/)
 
+
+#### Libraries
 * [Flask](http://flask.pocoo.org/)
 * [Flask-Script](https://flask-script.readthedocs.io/en/latest/)
 * [Flask-Restful](https://flask-restful.readthedocs.io/en/0.3.5/)
+* [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
+* [Geoalchemy](https://geoalchemy-2.readthedocs.io/en/latest/)
+* [geojson](https://github.com/frewsxcv/python-geojson)
+
+### Ideas in practice
+* [HOT Tasking Manager v3](https://github.com/hotosm/tasking-manager) - Built by thinkWhere using these ideas
+
+* [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
